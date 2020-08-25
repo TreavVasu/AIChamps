@@ -1,23 +1,50 @@
 import pdftotext
-import  csv
+import csv
 
-print('Start')
-with open(r"pdf/2.pdf", "rb") as f:
-    pdf = pdftotext.PDF(f)
-x=[]
-# Iterate over all the pages
-for page in pdf:
-    #print(page)
-    x.append(page)
-print(x)
+#All for getting pdf file data
 
-data = {'': 0, 'text': x}
-with open('task2.csv', 'w') as csvfile:
-    fielda=['','text']
-    writer = csv.DictWriter(csvfile,fieldnames=fielda)
-    writer.writeheader()
-    writer.writerow(data)
+def getPdfData(pdf):
+    #pdf argument here is open()
+    print('Method Print:')
+    x=''
+    y=[]
+    for page in pdf:
+        x+=page
+    y.append(x)
+    return y
 
+# CSV file data entry
+def csvWork(index,datum):
+    # data = {'': 0, 'text': getPdfData()}
+    data={'':index,'text':datum}
+    print('CSV Work')
+    # For changing to append insted of overwrite replace 'w' with 'a'
+    with open('task2.csv', 'a') as csvfile:
+        fielda = ['', 'text']
+        writer = csv.DictWriter(csvfile,fieldnames=fielda)
+        # writer.writeheader()
+        writer.writerow(data)
+    csvfile.close()
+    print('Done!')
 
+def formatString(x):
+    y= x.replace("|", "")
+    y= x.replace(" ", "")
+    return y.encode('UTF-8')
 
-print('End')
+count=0
+#Initializetion for earlier automation
+# for i in range(2,51):
+#     count+=1
+#     with open(r"pdf/"+str(i)+".pdf", "rb") as f:
+#         pdf=pdftotext.PDF(f)
+#         x = getPdfData(pdf)
+#         y = formatString(x[0])
+#         print(y)
+#         csvWork(i-1,y)
+#     f.close()
+#     print(count)
+
+#
+# with open(r"pdf/1.pdf", "rb") as f:
+#     pdf = pdftotext.PDF(f)
