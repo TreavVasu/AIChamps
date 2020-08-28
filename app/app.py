@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 import csv
-from flask_jsonpify import jsonpify
-import pandas as pd
+#from flask_jsonpify import jsonpify
+#import pandas as pd
 import json
 app = Flask(__name__)
 
@@ -29,7 +29,7 @@ def getData():
             count+=1
 
             # Open a json writer, and use the json.dumps()
-    response = json.dumps(data ,indent=4)
+    response = json.dumps(data, indent=4)
 
     # function to dump data
     # with open(jsonFilePath, 'w', encoding='utf-8') as jsonf:
