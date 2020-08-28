@@ -2,6 +2,7 @@ import collections
 import pandas as pd
 import csv
 import re
+import json
 import matplotlib.pyplot as plt
 # %matplotlib inline
 # Read input file, note the encoding is specified here
@@ -14,8 +15,8 @@ def doA(row):
 
     words = re.findall(r'\w+', a)
     most_common = collections.Counter(words).most_common(100)
-    print(most_common)
-    print()
+    # print(most_common)
+    print(json.dumps(most_common,indent=4))
 
 x=[]
 with open('task2.csv', encoding='utf-8') as csvf:
