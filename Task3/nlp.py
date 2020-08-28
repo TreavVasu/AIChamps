@@ -15,7 +15,6 @@ def doA(row):
 
     words = re.findall(r'\w+', a)
     most_common = collections.Counter(words).most_common(100)
-    # print(most_common)
     print(json.dumps(most_common,indent=4))
 
 x=[]
@@ -25,8 +24,5 @@ with open('task2.csv', encoding='utf-8') as csvf:
     for rows in csvReader:
         x.append(rows)
         doA(rows['text'])
-        # print(rows['']) => 1,2,3,4
-
-        # print(rows['text'])
         count+=1
 
