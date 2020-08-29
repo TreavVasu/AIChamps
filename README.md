@@ -34,6 +34,19 @@
     Flask
     Json
     
+    
+    
+# How to view it locally
+  ## Each task has it's separate folder so that it can be accessed freely just clone the repo 
+    git clone https://github.com/TreavVasu/AIChamps/
+    now open either with idle or gedit or preffered text editor 
+    open terminal 
+      cd path to folder 
+      python3 app/app.py  for api files
+      python3 filename.py
+    
   ## used api provider
     heroku
-    
+   [Api 1](https://aichamp.herokuapp.com/)
+   
+   [Api 2](https://aichamp.herokuapp.com/w)
