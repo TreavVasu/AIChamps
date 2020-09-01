@@ -50,3 +50,11 @@
    [Api 1](https://aichamp.herokuapp.com/)
    
    [Api 2](https://aichamp.herokuapp.com/w)
+   
+   
+   
+# API PDF to most common word 
+	Under Construction
+	Status:
+		1/3 level : Separate class for combining functions required 
+		   
