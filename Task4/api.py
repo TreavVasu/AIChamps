@@ -63,10 +63,9 @@ def getData():
 def apiOne():
     return render_template("view.html",data=getData())
 
-@app.route('/common')
+@app.route('/w')
 def apiTwo():
     return render_template("view.html",data=doA())
-
 
 
 if __name__ == '__main__':
